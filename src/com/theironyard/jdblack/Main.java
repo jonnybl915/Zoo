@@ -7,6 +7,15 @@ public class Main {
         Animal s = createAnimal("Snake");
         Animal h = createAnimal("Hawk");
 
+        Animal a = new Reptile() {
+            @Override
+            public void makeSound() {
+                System.out.println("Croak!");
+            }
+        };
+        a.name = "Alligator";
+
+        a.makeSound();
         d.makeSound();
         s.makeSound();
         h.makeSound();
@@ -14,7 +23,7 @@ public class Main {
         System.out.println(d);
         System.out.println(s);
         System.out.println(h);
-
+        System.out.println(a);
 
     }
     public static Animal createAnimal(String name) { //factory method to create object
