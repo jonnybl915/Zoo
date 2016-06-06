@@ -7,7 +7,7 @@ public class Main {
         Animal s = createAnimal("Snake");
         Animal h = createAnimal("Hawk");
 
-        Animal a = new Reptile() {
+        Animal a = new Reptile() {  //anonymous class creation. shorthand designed to be able to create and instantiate a class in one instance.
             @Override
             public void makeSound() {
                 System.out.println("Croak!");
@@ -15,6 +15,12 @@ public class Main {
         };
         a.name = "Alligator";
 
+        //java anonymous function a.k.a. lambda
+        Runnable r = () -> {
+            System.out.println("Hello from lamda");
+        };
+
+        sayHello(r);
         a.makeSound();
         d.makeSound();
         s.makeSound();
@@ -36,5 +42,8 @@ public class Main {
                 return new Hawk();
         }
         return new Animal();
+    }
+    public static void sayHello(Runnable runnable){
+        runnable.run();
     }
 }
